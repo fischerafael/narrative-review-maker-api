@@ -21,7 +21,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     },
     introduction: input.lenChars * 0.1,
     method: input.lenChars * 0.2,
-    results: input.lenChars * 0.45,
+    results: {
+      total: input.lenChars * 0.45,
+      perSection: (input.lenChars * 0.45) / 5,
+    },
     conclusion: input.lenChars * 0.1,
   };
 
